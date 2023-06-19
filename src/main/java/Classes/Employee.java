@@ -4,7 +4,7 @@ package Classes;
  * Класс сотрудника
  */
 public class Employee {
-    static int id = 0;
+    static int id = 1;
 
     String firstName;
     String lastName;
@@ -20,7 +20,7 @@ public class Employee {
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.salary = salary;
-        this.uid += id;
+        this.uid = id++;
         this.position = "Рядовой работник";
     }
 
@@ -97,12 +97,13 @@ public class Employee {
     public String toString() {
         return String.format("""
                 ========================================
+                ID: %s
                 Имя: %s
                 Фамилия: %s
                 Возраст: %d
                 Номер телефона: %s
-                Заработная плата: %s
+                Заработная плата: %d
                 Должность: %s
-                """, getFirstName(), getLastName(), getAge(), getPhoneNumber(), getSalary(), getPosition());
+                """, getUid(), getFirstName(), getLastName(), getAge(), getPhoneNumber(), getSalary(), getPosition());
     }
 }
